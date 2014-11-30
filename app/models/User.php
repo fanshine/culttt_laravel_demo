@@ -31,8 +31,8 @@ class User extends BaseModel implements UserInterface, RemindableInterface {
     public static $rules = [
         'username'              => 'required|between:4,16',
         'email'                 => 'required|email',
-        'password'              => 'required|alpha_num|min:8|confirmed',
-        'password_confirmation' => 'required|alpha_num|min:8',
+        'password'              => 'required|alpha_num|between:8,16|confirmed',
+        'password_confirmation' => 'required|alpha_num|between:8,16',
     ];
 
     //----------------Ardent Params End---------------------
