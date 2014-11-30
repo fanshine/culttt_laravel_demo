@@ -1,0 +1,15 @@
+/vendor
+/app/storage
+/app/config/database.php
+
+nbproject
+*.ini
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+/nbproject/private/
+.buildpath
+.project
+.settings/
+.idea
