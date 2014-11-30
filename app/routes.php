@@ -11,7 +11,26 @@
 |
 */
 
-Route::get('/', function()
-{
+Route::get('/', function() {
 	return View::make('hello');
+});
+
+
+Route::get('/user', function() {
+    $user = new User;
+    $user->username = 'philipbrown';
+    $user->email = 'philipbrown@domain.com';
+    $user->password = 'philipbrown';
+    $user->password_confirmation = 'philipbrown';
+    var_dump($user->save());
+});
+
+Route::get('/post', function () {
+    // Create a new Post
+    $post = new Post(array('body' => 'Yada yada yada'));
+    // Grab User 1
+    $user = User::find(1);
+    // Save the Post
+    $bSucc = $user->posts()->save($post);
+    var_dump($bSucc);
 });
